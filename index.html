@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIMPITERTORG GROUP - сырье для косметики и бытовой химии</title>
+    <link rel="shortcut icon" href="img/icon.png">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <!--scripts for sliders-->
+    <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!--//-->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+
+        </header>
+        <div class="content">
+            <div class="main-slider">
+                <div class="slideshow swiper-viewport main-slider_slideshow">
+                    <div id="slideshow1" class="swiper main-slider-background">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="slider__image" src="img/main/mainslider.jpg" alt="slide" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slider__image" src="img/main/mainslider.jpg" alt="slide" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slider__image" src="img/main/mainslider.jpg" alt="slide" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+                    const swiper = new Swiper('#slideshow1', {
+
+                        mode: 'horizontal',
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                        autoplay: 1,
+                        autoplayDisableOnInteraction: true,
+                        paginationClickable: true,
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: 'bullets',
+                            clickable: true
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
+                </script>
+            </div>
+
+
+        </div>
+        <footer class="footer__wrapper">
+
+        </footer>
+    </div>
+</body>
+
+</html>
