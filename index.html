@@ -29,10 +29,10 @@
                         <div></div>
                     </div>
                     <div class="header-nav__icons">
-                        <div class="burger"><span></span></div>
                         <div class="header-nav__heart"><span>15</span></div>
                         <div class="header-nav__basket"><span>1</span></div>
                         <div class="header-nav__cabinet"></div>
+                        <div class="burger"><span></span></div>
                     </div>
                 </div>
             </div>
@@ -51,15 +51,124 @@
             </div>
         </header>
         <div class="content">
-            <div class="content-top _container"></div>
-            <div class="content-central _container">
+            <div class="main-slider">
+                <div class="slideshow swiper-viewport main-slider_slideshow">
+                    <div id="slideshow1" class="swiper main-slider-background">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="banner1 _banner">
+                                    <div class="banner__image"> <img src="img/banners/Banner 1.png" alt="banner"></div>
+                                    <div class="banner1__content">
+                                        <h2 class="banner__title">БЕЗОПАСНОСТЬ И КАЧЕСТВО - <br> НАШ ПРИОРИТЕТ</h2>
+                                        <p class="banner__text">Мы заботимся о Вас и о своем честном имени</p>
+                                        <div class="banner__button _button">Перейти в каталог</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner2 _banner">
+                                    <div class="banner__image"> <img src="img/banners/Banner 2.png" alt="banner"></div>
+                                    <div class="banner2__content">
+                                        <h2 class="banner__title">МЫ КРУГЛОСУТОЧНО НА СВЯЗИ</h2>
+                                        <p class="banner__text">И готовы ответить на любые ваши вопросы</p>
+                                        <div class="banner__button _button">Связаться с нами</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner3 _banner">
+                                    <div class="banner__image"> <img src="img/banners/Banner 3.png" alt="banner"></div>
+                                    <div class="banner3__content">
+                                        <h2 class="banner__title">ИНДИВИДУАЛЬНЫЙ ПОДХОД <br> К КАЖДОМУ КЛИЕНТУ</h2>
+                                        <p class="banner__text">А также высококлассный и гибкий сревис</p>
+                                        <div class="banner__button _button">Перейти в каталог</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner4 _banner">
+                                    <div class="banner__image"> <img src="img/banners/Banner 4.png" alt="banner"></div>
+                                    <div class="banner4__content">
+                                        <h2 class="banner__title">Бесплатные <br> пробники для вас</h2>
+                                        <p class="banner__text">При любой сумме заказа. Рамер пробника 5-10 грамм</p>
+                                        <div class="banner__button _button">Сделать заказ</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner5 _banner">
+                                    <div class="banner__image"> <img src="img/banners/Banner 5.png" alt="banner"></div>
+                                    <div class="banner5__content">
+                                        <h2 class="banner__title">Химпитерторг групп- новый <br> концепт и свежие идеи,
+                                            <br>
+                                            воплощённые профессионалами
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+                    const swiper = new Swiper('#slideshow1', {
+
+                        mode: 'horizontal',
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                        autoplay: 1,
+                        autoplayDisableOnInteraction: true,
+                        paginationClickable: true,
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: 'bullets',
+                            clickable: true
+                        },
+                    });
+                </script>
+            </div>
+            <div class="content-column _container">
+                <div class="content-top"></div>
                 <div class="left-column"></div>
                 <div class="central-column"></div>
                 <div class="right-column"></div>
+                <div class="content-bottom"></div>
             </div>
-            <div class="content-bottom _container"></div>
         </div>
         <footer class="footer">
+            <div class="footer__container _container">
+                <div class="footer__info">
+                    <h3 class="footer__title">ИНФОРМАЦИЯ</h3>
+                    <a class="footer__ref" href="#">О нас</a>
+                    <a class="footer__ref" href="#">Как заказать</a>
+                    <a class="footer__ref" href="#">Доставка и оплата</a>
+                    <a class="footer__ref" href="#">FAQ</a>
+                    <a class="footer__ref" href="#">Договор оферты</a>
+                </div>
+                <div class="footer__support">
+                    <h3 class="footer__title">СЛУЖБА ПОДДЕРЖКИ</h3>
+                    <a class="footer__ref" href="#">Связаться с нами</a>
+                </div>
+                <div class="footer__promo">
+                    <h3 class="footer__title">АКЦИИ И СКИДКИ</h3>
+                    <a class="footer__ref" href="#">Товары со скидкой</a>
+                </div>
+                <div class="footer__contacts">
+                    <h3 class="footer__title">КОНТАКТЫ</h3>
+                    <a class="footer__ref" href="mailto:info@himpitertorg.ru">info@himpitertorg.ru</a>
+                    <a class="footer__ref" href="tel:+79523701690">+7 (952) 370-16-90</a>
+                    <a class="footer__ref" href="tel:+78122055538">+7 (812) 205-55-38</a>
+                    <div class="footer__social">
+                        <div class="social__instagram"></div>
+                        <div class="social__telegram"></div>
+                        <div class="social__viber"></div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
