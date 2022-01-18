@@ -206,6 +206,7 @@ ul li {
     line-height: 19px;
     align-self: center;
     justify-self: end;
+    cursor: pointer;
 }
 
 .header-nav__callback {
@@ -257,6 +258,7 @@ ul li {
     width: 25px;
     height: 25px;
     background: #F4F2F1 url(../img/main/search.svg) center center no-repeat;
+    cursor: pointer;
 }
 
 .header-nav__icons {
@@ -279,15 +281,18 @@ ul li {
 .header-nav__heart {
     background: #F4F2F1 url(../img/main/heart.svg) center center no-repeat;
     position: relative;
+    cursor: pointer;
 }
 
 .header-nav__basket {
     background: #F4F2F1 url(../img/main/shopping-bag.svg) center center no-repeat;
     position: relative;
+    cursor: pointer;
 }
 
 .header-nav__cabinet {
     background: #F4F2F1 url(../img/main/user.svg) center center no-repeat;
+    cursor: pointer;
 }
 
 .header-nav__heart span, .header-nav__basket span {
@@ -505,6 +510,36 @@ ul li {
 .radio-styled:checked+label::before {
     background: #FFFFFF00 url(../img/main/dot.svg) center center no-repeat;
     background-size: 6px 6px;
+}
+
+/*------checkbox-styled--------*/
+
+.checkbox-styled {
+    z-index: -1;
+    opacity: 0;
+    margin-left: -15px;
+}
+
+.checkbox-styled+label::before {
+    content: " ";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #F4F2F1;
+    border: 1px solid #27221C;
+    box-sizing: border-box;
+    margin-right: 8px;
+    margin-bottom: -3px;
+}
+
+.checkbox-styled:checked+label::before {
+    content: " ";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #AFBDD5 url(../img/main/agree.svg) center center no-repeat;
+    border: 1px solid #27221C;
+    box-sizing: border-box;
 }
 
 /*------end of content general styles--------*/
@@ -862,6 +897,384 @@ ul li {
 }
 
 /*------end of latest items--------*/
+
+/*------advantages--------*/
+
+.advantages {
+    margin-bottom: 160px;
+}
+
+.advantage__reliable, .advantage__comfortable, .advantage__individual, .advantage__prifitable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.advantage__reliable, .advantage__comfortable, .advantage__individual {
+    margin-bottom: 68px;
+}
+
+.reliable__decor {
+    position: absolute;
+    width: 2px;
+    height: 421px;
+    background: #AFBDD5;
+    top: -37px;
+    left: 475px;
+}
+
+.comfortable__decor {
+    position: absolute;
+    width: 749px;
+    height: 2px;
+    background: #AFBDD5;
+    top: 240px;
+    left: 0px;
+}
+
+.individual__decor {
+    position: absolute;
+    width: 2px;
+    height: 378px;
+    background: #AFBDD5;
+    top: 0;
+    left: 475px;
+}
+
+.prifitable__decor {
+    position: absolute;
+    width: 634px;
+    height: 2px;
+    background: #AFBDD5;
+    top: 323px;
+    right: 0px;
+}
+
+.reliable__image, .individual__image {
+    max-width: 380px;
+    height: auto;
+}
+
+.comfortable__image, .prifitable__image {
+    max-width: 475px;
+    height: auto;
+    z-index: 2;
+}
+
+.reliable__image img, .comfortable__image img, .individual__image img, .prifitable__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.advantage-description {
+    max-width: 555px;
+}
+
+.advantage-title {
+    margin-bottom: 30px;
+}
+
+.advantage-text {
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.advantage-text:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 1110px) {
+    .advantages {
+        margin-bottom: 50px;
+    }
+
+    .advantage__reliable, .advantage__comfortable, .advantage__individual, .advantage__prifitable {
+        justify-content: center;
+    }
+
+    .advantage__reliable, .advantage__comfortable, .advantage__individual {
+        margin-bottom: 30px;
+    }
+
+    .reliable__decor, .comfortable__decor, .individual__decor, .prifitable__decor {
+        display: none;
+    }
+
+    .advantage-description {
+        max-width: 475px;
+    }
+
+    .advantage-title {
+        margin-bottom: 15px;
+    }
+
+    .advantage-text {
+        font-size: 14px;
+    }
+
+    .advantage-text:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .reliable__title, .individual__title {
+        margin-top: 15px;
+    }
+
+    .comfortable__description, .prifitable__description {
+        margin-bottom: 15px;
+    }
+
+    .reliable__description, .individual__description {
+        margin-left: 20px;
+    }
+
+}
+
+/*------end of advantages--------*/
+
+/*------instagram--------*/
+
+.instagram {
+    margin-bottom: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.instagram__title {
+    margin-bottom: 5px;
+}
+
+.instagram__refference {
+    display: inline-block;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(39, 34, 28, 0.8);
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+.instagram__refference:hover {
+    color: #AFBDD5;
+}
+
+.instagram__subscribe {
+    display: flex;
+    height: 40px;
+    width: 255px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background: #ffffff00;
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 19px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.instagram__subscribe:hover {
+    background: #AFBDD5;
+}
+
+.instagram__photo {
+    max-width: 790px;
+    height: auto;
+}
+
+.instagram__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 1110px) {
+    .instagram {
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+
+    .instagram__nav {
+        text-align: center;
+    }
+
+    .instagram__refference {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+
+    .instagram__subscribe {
+        height: 30px;
+        padding: 8px;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 20px;
+    }
+
+}
+
+/*------end of instagram--------*/
+
+/*------subscribe--------*/
+
+.subscribe {
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.subscribe__nav {}
+
+.subscribe__title {
+    margin-bottom: 10px;
+}
+
+.subscribe__text {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 35px;
+}
+
+.subscribe__input {
+    margin-bottom: 15px;
+}
+
+.subscribe__input input {
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 325px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 19px;
+    background-color: #F4F2F1;
+}
+
+.subscribe__input input::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(39, 34, 28, 0.7);
+}
+
+.subscribe__agree+label {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.subscribe__button {
+    width: 325px;
+    margin-top: 25px;
+}
+
+.subscribe__photo-wrapper {
+    position: relative;
+}
+
+.subscribe__love {
+    position: absolute;
+    background: #F4F2F1 url(../img/main/heart-full.svg) 155px center no-repeat;
+    background-size: 17px 15px;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    padding-right: 35px;
+    top: 215px;
+    left: -100px;
+}
+
+.subscribe__photo {
+    max-width: 380px;
+    height: auto;
+    margin-top: 15px;
+}
+
+.subscribe__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1110px) {
+    .subscribe {
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+
+    .subscribe__nav {
+        text-align: center;
+    }
+
+    .subscribe__text {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .subscribe__input input {
+        padding: 7px 15px;
+        width: 290px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .subscribe__input input::placeholder {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .subscribe__agree+label {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .subscribe__button {
+        width: 290px;
+        margin: 15px auto 0 auto;
+    }
+
+    .subscribe__love {
+        position: absolute;
+        background: #F4F2F1 url(../img/main/heart-full.svg) 120px center no-repeat;
+        background-size: 14px 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        padding-right: 20px;
+        top: 170px;
+        left: 10px;
+    }
+
+    .subscribe__photo {
+        max-width: 380px;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    .subscribe__photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/*------end of subscribe--------*/
 
 /*------end of main page--------*/
 
