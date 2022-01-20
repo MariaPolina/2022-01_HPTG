@@ -441,6 +441,7 @@ ul li {
     height: 22px;
     background: #F4F2F1 url(../img/main/heart-full.svg) center center no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 
 .dropdown-favorites__move {
@@ -479,6 +480,165 @@ ul li {
 }
 
 /*------end of header - favorite dropdown--------*/
+
+/*------header - basket dropdown--------*/
+
+.dropdown-basket {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    z-index: 2;
+    background: #F4F2F1;
+    border: 0.5px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 285px;
+    height: calc(100% - 130px);
+    min-height: 360px;
+    overflow-y: auto !important;
+}
+
+.dropdown-basket__items {
+    display: flex;
+    flex-direction: column;
+    border-bottom: #AFBDD5 1px solid;
+}
+
+.dropdown-basket__item {
+    display: grid;
+    grid-template: auto auto / auto auto auto auto auto;
+    grid-template-areas: "image title title title dell""image weight number price price";
+    margin-bottom: 20px;
+}
+
+.dropdown-basket__image {
+    grid-area: image;
+    width: 60px;
+    height: 60px;
+}
+
+.dropdown-basket__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dropdown-basket__title {
+    grid-area: title;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    padding: 0 10px;
+}
+
+.dropdown-basket__dell {
+    grid-area: dell;
+    width: 12px;
+    height: 12px;
+    background: #F4F2F1 url(../img/main/dell-goods.svg) center center no-repeat;
+    cursor: pointer;
+}
+
+.dropdown-basket__weight {
+    grid-area: weight;
+    font-size: 11px;
+    line-height: 130%;
+    padding: 0 10px;
+}
+
+.dropdown-basket__number {
+    grid-area: number;
+    font-size: 11px;
+    line-height: 130%;
+    justify-self: center;
+}
+
+.dropdown-basket__price {
+    grid-area: price;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 130%;
+    justify-self: end;
+}
+
+.dropdown-basket__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dropdown-basket__preliminary {
+    font-size: 11px;
+    line-height: 130%;
+}
+
+.dropdown-basket__cost {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 130%;
+}
+
+.dropdown-basket__move {
+    display: flex;
+    width: 240px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background: #F4F2F1;
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.dropdown-basket__move:hover {
+    background: #AFBDD5;
+}
+
+.dropdown-basket__checkout {
+    display: flex;
+    width: 240px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background: #AFBDD5;
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.dropdown-basket__checkout:hover {
+    background: #889ab9;
+}
+
+@media (max-width: 1110px) {
+
+    .dropdown-basket {
+        position: absolute;
+        top: 145px;
+        right: 50%;
+        transform: translateX(50%);
+        height: calc(100% - 160px);
+        min-height: 360px;
+    }
+}
+
+/*------end of header - basket dropdown--------*/
 
 @media (max-width: 1110px) {
 

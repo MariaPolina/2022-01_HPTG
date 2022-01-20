@@ -1,6 +1,7 @@
 var burgerOpen = false;
 var burgerCatalogOpen = false;
-var favoritesOpen = false
+var favoritesOpen = false;
+var basketOpen = false;
 
 $(document).ready(function () {
 
@@ -71,35 +72,55 @@ $(document).ready(function () {
 
     /*----dropdown for favorite goods----*/
 
-    /* Когда на карточке товара нажато сердечко,  
-    карточке товара нужно добавить класс "like1", "like2" и т.д. 
-
-    Затем ниже, где строится html нужно достроить нужное количество товаров. 
-    Для того, чтобы забрать картинку и название товара, который понравился, нужно указать соответствующий класс "like1", "like2" и т.д.
-    */
-
     $('.header-nav__heart').on('click', function () {
         if (favoritesOpen) {
             favoritesOpen = false;
             $('.dropdown-favorites').remove();
-            $('body,html').css('overflow-y', 'auto');
 
         } else {
             favoritesOpen = true;
             var html = '<div class="dropdown-favorites"><div class="dropdown-favorites__items">';
-            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image">' + $('.like1>.goods-card__image').html() + '</div><div class="dropdown-favorites__title">' + $('.like1>.goods-card__title').text() + '</div><div class="dropdown-favorites__heart"></div></div>';
-            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image">' + $('.like2>.goods-card__image').html() + '</div><div class="dropdown-favorites__title">' + $('.like2>.goods-card__title').text() + '</div><div class="dropdown-favorites__heart"></div></div>';
-            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image">' + $('.like3>.goods-card__image').html() + '</div><div class="dropdown-favorites__title">' + $('.like3>.goods-card__title').text() + '</div><div class="dropdown-favorites__heart"></div></div>';
+            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Масло зародышей пшеницы</div><div class="dropdown-favorites__heart"></div></div>';
+            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Василек (лепестки) сухоцвет</div><div class="dropdown-favorites__heart"></div></div>';
+            html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 2.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Воск соевый для контейнерных свечей</div><div class="dropdown-favorites__heart"></div></div>';
 
             html += '</div><div class="dropdown-favorites__move">Переместить в корзину</div></div>';
 
             $('.header-main').prepend(html);
-            $('body,html').css('overflow-y', 'hidden');
-            var contFavoriteGoods = 3;
+
+            var countFavoriteGoods = 3;
             var favoriteGoodsHeight = 75;
 
-            if (contFavoriteGoods < 3) {
-                $('.dropdown-favorites').height(contFavoriteGoods * favoriteGoodsHeight + 80).css('min-height', 'auto');
+            if (countFavoriteGoods < 3) {
+                $('.dropdown-favorites').height(countFavoriteGoods * favoriteGoodsHeight + 80).css('min-height', 'auto');
+            }
+        }
+    });
+
+    /*----////----*/
+
+    /*----dropdown for basket----*/
+
+    $('.header-nav__basket').on('click', function () {
+        if (basketOpen) {
+            basketOpen = false;
+            $('.dropdown-basket').remove();
+
+        } else {
+            basketOpen = true;
+            var html = '<div class="dropdown-basket"><div class="dropdown-basket__items">';
+            html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Масло зародышей пшеницы</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 1 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">2030.00 р.</div></div>';
+            html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Василек (лепестки) сухоцвет</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 27 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">20250.00 р.</div></div>';
+
+            html += '</div><div class="dropdown-basket__total"><div class="dropdown-basket__preliminary">Предварительная стоимость</div><div class="dropdown-basket__cost">20280.00 р.</div></div><div class="dropdown-basket__move">Перейти в корзину</div><div class="dropdown-basket__checkout">Оформить заказ</div></div>';
+
+            $('.header-main').prepend(html);
+
+            var countBasketGoods = 2;
+            var basketGoodsHeight = 85;
+
+            if (countBasketGoods < 3) {
+                $('.dropdown-basket').height(countBasketGoods * basketGoodsHeight + 150).css('min-height', 'auto');
             }
         }
     });
