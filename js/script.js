@@ -2,6 +2,7 @@ var burgerOpen = false;
 var burgerCatalogOpen = false;
 var favoritesOpen = false;
 var basketOpen = false;
+var cabinetOpen = false;
 
 $(document).ready(function () {
 
@@ -44,6 +45,10 @@ $(document).ready(function () {
             $('.burger').removeClass('active');
         } else {
             burgerOpen = true;
+            favoritesOpen = false;
+            $('.dropdown-favorites').remove();
+            basketOpen = false;
+            $('.dropdown-basket').remove();
             $('.burger').addClass('active');
             var html = '<div class="burger__wrapper">';
             html += '<div class="burger__contact"><div class="burger__tel">' + $('.header-nav__tel').html() + '</div>';
@@ -79,6 +84,8 @@ $(document).ready(function () {
 
         } else {
             favoritesOpen = true;
+            basketOpen = false;
+            $('.dropdown-basket').remove();
             var html = '<div class="dropdown-favorites"><div class="dropdown-favorites__items">';
             html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Масло зародышей пшеницы</div><div class="dropdown-favorites__heart"></div></div>';
             html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Василек (лепестки) сухоцвет</div><div class="dropdown-favorites__heart"></div></div>';
@@ -88,7 +95,7 @@ $(document).ready(function () {
 
             $('.header-main').prepend(html);
 
-            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КОЛИЧЕСТВО ТОВАРОВ !!! ----*/
 
             var countFavoriteGoods = 3;
             var favoriteGoodsHeight = 75;
@@ -110,6 +117,8 @@ $(document).ready(function () {
 
         } else {
             basketOpen = true;
+            favoritesOpen = false;
+            $('.dropdown-favorites').remove();
             var html = '<div class="dropdown-basket"><div class="dropdown-basket__items">';
             html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Масло зародышей пшеницы</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 1 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">2030.00 р.</div></div>';
             html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Василек (лепестки) сухоцвет</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 27 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">20250.00 р.</div></div>';
@@ -118,7 +127,7 @@ $(document).ready(function () {
 
             $('.header-main').prepend(html);
 
-            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КОЛИЧЕСТВО ТОВАРОВ !!! ----*/
 
             var countBasketGoods = 2;
             var basketGoodsHeight = 85;
@@ -128,6 +137,24 @@ $(document).ready(function () {
             }
         }
     });
+
+    /*----////----*/
+
+    /*----dropdown for cabinet----
+
+    $('.header-nav__cabinet').on('click', function () {
+        if (cabinetOpen) {
+            cabinetOpen = false;
+            $('.dropdown-cabinet').remove();
+
+        } else {
+            cabinetOpen = true;
+            var html = '<div class="dropdown-cabinet">';
+
+            $('.header-main').prepend(html);
+
+        }
+    });*/
 
     /*----////----*/
 
@@ -153,7 +180,7 @@ $(document).ready(function () {
 
     /*----count height for checkout goods----*/
 
-    /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+    /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КОЛИЧЕСТВО ТОВАРОВ !!! ----*/
 
     var countCheckoutGoods = 2;
     var checkoutGoodsHeight = 115;
