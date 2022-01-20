@@ -88,6 +88,8 @@ $(document).ready(function () {
 
             $('.header-main').prepend(html);
 
+            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+
             var countFavoriteGoods = 3;
             var favoriteGoodsHeight = 75;
 
@@ -116,6 +118,8 @@ $(document).ready(function () {
 
             $('.header-main').prepend(html);
 
+            /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+
             var countBasketGoods = 2;
             var basketGoodsHeight = 85;
 
@@ -123,6 +127,52 @@ $(document).ready(function () {
                 $('.dropdown-basket').height(countBasketGoods * basketGoodsHeight + 150).css('min-height', 'auto');
             }
         }
+    });
+
+    /*----////----*/
+
+    /*----my-select----*/
+
+    $('.my-select>div:first-child').on('click', function (event) {
+        $($(this).next('div')).slideToggle(300);
+        $(this).toggleClass('active');
+
+    });
+
+    $('.my-select >div:nth-child(2)> div').on('click', function (event) {
+        $('.my-select div:nth-child(2)> div').removeClass('active');
+        $(this).addClass('active');
+
+        $($($(this).parent()).next('input')).val($(this).attr('data'));
+
+        $($($(this).parent()).prev("div")).text($(this).text()).trigger('click');
+
+    });
+
+    /*----////----*/
+
+    /*----count height for checkout goods----*/
+
+    /*----НЕ ЗАБЫТЬ ПОСЧИТАТЬ КИЛИЧЕСТВО ТОВАРОВ !!! ----*/
+
+    var countCheckoutGoods = 2;
+    var checkoutGoodsHeight = 115;
+
+    if ($(window).width() > 1110) {
+        $('.checkout__goods').height(countCheckoutGoods * checkoutGoodsHeight + 215);
+
+    } else {
+        $('.checkout__goods').height(countCheckoutGoods * checkoutGoodsHeight + 175);
+    };
+
+    $(window).resize(function () {
+
+        if ($(window).width() > 1110) {
+            $('.checkout__goods').height(countCheckoutGoods * checkoutGoodsHeight + 215);
+
+        } else {
+            $('.checkout__goods').height(countCheckoutGoods * checkoutGoodsHeight + 175);
+        };
     });
 
     /*----////----*/

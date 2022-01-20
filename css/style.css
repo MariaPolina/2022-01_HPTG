@@ -1031,6 +1031,87 @@ ul li {
     box-sizing: border-box;
 }
 
+/*------my-select--------*/
+
+.my-select {
+    position: relative;
+}
+
+.my-select>div:nth-child(2) {
+    display: none;
+    background: #F4F2F1;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #AFBDD5;
+}
+
+.my-select>div:first-child {
+    background: #F4F2F1 url(../img/main/arrow-down.svg) calc(100% - 20px) center no-repeat;
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(39, 34, 28, 0.7);
+}
+
+.my-select>div:first-child.active {
+    border: 1px solid #9aabc9;
+}
+
+.my-select div:nth-child(2)>div {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.my-select div:nth-child(2)>div:hover {
+    background: #AFBDD5;
+}
+
+.my-select div:nth-child(2)>div.active {
+    background: #9aabc9;
+}
+
+/*------input--------*/
+
+._input input {
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 19px;
+    background-color: #F4F2F1;
+}
+
+._input input::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(39, 34, 28, 0.7);
+}
+
+._input textarea {
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 19px;
+    background-color: #F4F2F1;
+    resize: none;
+}
+
+._input textarea::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(39, 34, 28, 0.7);
+}
+
 /*------end of content general styles--------*/
 
 /*------main page--------*/
@@ -2102,6 +2183,135 @@ ul li {
 }
 
 /*------end of basket page--------*/
+
+/*------checkout page--------*/
+
+.checkout {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.checkout__title {
+    margin-bottom: 40px;
+}
+
+.checkout__wrapper {
+    display: grid;
+    grid-template-columns: 57% calc(43% - 40px);
+    column-gap: 40px;
+}
+
+.checkout__fields h2 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 30px;
+}
+
+.checkout__fields-names {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.checkout__fields-company {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 20px;
+}
+
+.checkout__index-city, .checkout__delivery {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    column-gap: 20px;
+}
+
+.checkout__receiver textarea {
+    height: 80px;
+}
+
+.checkout__goods {
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 30px 30px 40px 30px;
+}
+
+.checkout__item {
+    border-bottom: 1px #AFBDD5 solid;
+    margin-top: 10px;
+}
+
+.checkout__items {
+    margin-bottom: 40px;
+}
+
+.checkout__product-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 1110px) {
+
+    .checkout {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .checkout__title {
+        margin-bottom: 20px;
+    }
+
+    .checkout__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .checkout__fields h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .checkout__fields-names {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        row-gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .checkout__fields-company {
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: 20px;
+    }
+
+    .checkout__index-city, .checkout__delivery {
+        display: grid;
+        grid-template: 1fr / 1fr;
+        row-gap: 20px;
+    }
+
+    .checkout__delivery-company {
+        z-index: 3;
+    }
+
+    .checkout__goods {
+        padding: 20px;
+    }
+
+    .checkout__items {
+        margin-bottom: 30px;
+    }
+
+}
+
+/*------end of checkout page--------*/
 
 /*------end of CONTENT--------*/
 
