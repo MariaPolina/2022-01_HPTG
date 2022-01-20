@@ -49,6 +49,8 @@ $(document).ready(function () {
             $('.dropdown-favorites').remove();
             basketOpen = false;
             $('.dropdown-basket').remove();
+            cabinetOpen = false;
+            $('.dropdown-cabinet').remove();
             $('.burger').addClass('active');
             var html = '<div class="burger__wrapper">';
             html += '<div class="burger__contact"><div class="burger__tel">' + $('.header-nav__tel').html() + '</div>';
@@ -86,6 +88,8 @@ $(document).ready(function () {
             favoritesOpen = true;
             basketOpen = false;
             $('.dropdown-basket').remove();
+            cabinetOpen = false;
+            $('.dropdown-cabinet').remove();
             var html = '<div class="dropdown-favorites"><div class="dropdown-favorites__items">';
             html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Масло зародышей пшеницы</div><div class="dropdown-favorites__heart"></div></div>';
             html += '<div class="dropdown-favorites__item"><div class="dropdown-favorites__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-favorites__title">Василек (лепестки) сухоцвет</div><div class="dropdown-favorites__heart"></div></div>';
@@ -119,6 +123,8 @@ $(document).ready(function () {
             basketOpen = true;
             favoritesOpen = false;
             $('.dropdown-favorites').remove();
+            cabinetOpen = false;
+            $('.dropdown-cabinet').remove();
             var html = '<div class="dropdown-basket"><div class="dropdown-basket__items">';
             html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 1.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Масло зародышей пшеницы</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 1 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">2030.00 р.</div></div>';
             html += '<div class="dropdown-basket__item"><div class="dropdown-basket__image"><img src="img/goods/image 3.jpg" alt="Масло зародышей пшеницы"></div><div class="dropdown-basket__title">Василек (лепестки) сухоцвет</div><div class="dropdown-basket__dell"></div><div class="dropdown-basket__weight">Вес 27 кг</div><div class="dropdown-basket__number">х1</div><div class="dropdown-basket__price">20250.00 р.</div></div>';
@@ -140,7 +146,7 @@ $(document).ready(function () {
 
     /*----////----*/
 
-    /*----dropdown for cabinet----
+    /*----dropdown for cabinet----*/
 
     $('.header-nav__cabinet').on('click', function () {
         if (cabinetOpen) {
@@ -149,12 +155,16 @@ $(document).ready(function () {
 
         } else {
             cabinetOpen = true;
-            var html = '<div class="dropdown-cabinet">';
+            basketOpen = false;
+            $('.dropdown-basket').remove();
+            favoritesOpen = false;
+            $('.dropdown-favorites').remove();
+            var html = '<div class="dropdown-cabinet"><div class="dropdown-cabinet__register">Регистрация</div><div class="dropdown-cabinet__authorize">Авторизация</div></div>';
 
             $('.header-main').prepend(html);
 
         }
-    });*/
+    });
 
     /*----////----*/
 
