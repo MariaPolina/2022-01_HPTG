@@ -228,6 +228,74 @@ ul li {
     grid-area: content-bottom;
 }
 
+@media (max-width: 1110px) {
+    .no-columns {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-areas: "content-top"
+            "central-column"
+            "content-bottom";
+    }
+
+    .column-left {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-areas: "content-top"
+            "central-column"
+            "content-bottom"
+            "left-column";
+    }
+
+    .column-right {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-areas: "content-top"
+            "central-column"
+            "content-bottom"
+            "right-column";
+    }
+
+    .column-left-right {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-areas: "content-top"
+            "central-column"
+            "content-bottom"
+            "left-column"
+            "right-column";
+    }
+
+    .content-top {
+        grid-area: content-top;
+    }
+
+    .left-column {
+        grid-area: left-column;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+
+    .central-column {
+        grid-area: central-column;
+    }
+
+    .right-column {
+        grid-area: right-column;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+
+    .content-bottom {
+        grid-area: content-bottom;
+    }
+}
+
 /*------end of column grid system--------*/
 
 /*------end of general styles--------*/
@@ -749,7 +817,7 @@ ul li {
 
     .header {
         padding-top: 15px;
-        padding-bottom: 15px;
+
         position: relative;
     }
 
@@ -795,7 +863,7 @@ ul li {
         align-self: center;
         width: 290px;
         justify-self: center;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 
     .header-menu {
@@ -977,6 +1045,7 @@ ul li {
     font-weight: 400;
     font-size: 32px;
     line-height: 135%;
+    text-transform: uppercase;
 }
 
 ._button {
@@ -1197,6 +1266,12 @@ ul li {
 
 .main-slider_slideshow .swiper-pagination-bullet-active {
     background: #AFBDD5;
+}
+
+@media (max-width: 1110px) {
+    .main-slider {
+        margin-top: 30px;
+    }
 }
 
 /*------end of main slider--------*/
@@ -2096,10 +2171,6 @@ ul li {
 
 @media (max-width: 1110px) {
 
-    .no-columns {
-        column-gap: 0 !important;
-    }
-
     .basket {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -2357,6 +2428,201 @@ ul li {
 
 /*------end of checkout page--------*/
 
+/*------account pages--------*/
+
+.account-menu {
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.account-menu__item {
+    font-size: 16px;
+    line-height: 19px;
+    padding-bottom: 10px;
+    border-bottom: #AFBDD5 1px solid;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+.account-menu__item:not(:first-child) {
+    margin-top: 10px;
+}
+
+.account-menu__item:hover {
+    color: #AFBDD5;
+}
+
+.authorization {
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.authorization__title {
+    margin-bottom: 35px;
+}
+
+.authorization__wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    column-gap: 65px;
+}
+
+.authorization__new-user, .authorization__login {
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.authorization__new-user h2, .authorization__login h2 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 18px;
+}
+
+.authorization__new-user h3, .authorization__login h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+}
+
+.authorization__new-user p {
+    font-size: 18px;
+    line-height: 130%;
+    margin-bottom: 30px;
+}
+
+.new-user__create {
+    margin-top: -10px;
+}
+
+.authorization__login p {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 10px;
+}
+
+.login__email {
+    margin-bottom: 20px;
+}
+
+.login__password {
+    margin-bottom: 15px;
+}
+
+.authorization__login a {
+    display: block;
+    text-decoration-line: underline;
+    margin-bottom: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+.authorization__login a:hover {
+    color: #AFBDD5;
+}
+
+@media (max-width: 1110px) {
+    .account-menu {
+        display: none;
+    }
+
+    .authorization {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .authorization__title {
+        margin-bottom: 20px;
+    }
+
+    .authorization__wrapper {
+        display: grid;
+        grid-template: 1fr / 1fr;
+        row-gap: 30px;
+    }
+
+    .authorization__new-user, .authorization__login {
+        padding: 15px;
+    }
+
+    .authorization__new-user h2, .authorization__login h2 {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    .authorization__new-user h3, .authorization__login h3 {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+
+    .authorization__new-user p {
+        font-size: 14px;
+        line-height: 130%;
+        margin-bottom: 15px;
+    }
+
+    .new-user__create {
+        margin-top: 0px;
+    }
+
+    .authorization__login p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .login__email {
+        margin-bottom: 15px;
+    }
+
+}
+
+.account__wrapper {
+    margin-top: 60px;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    row-gap: 30px;
+}
+
+.my-account__title, .my-orders__title, .my-subscribe__title {
+    margin-bottom: 20px;
+}
+
+.my-account__item {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 130%;
+    text-decoration-line: underline;
+}
+
+@media (max-width: 1110px) {
+    .account__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        column-gap: 50px;
+        row-gap: 20px;
+        text-align: center;
+    }
+
+    .my-account__title, .my-orders__title, .my-subscribe__title {
+        margin-bottom: 15px;
+    }
+
+    .my-account__item {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+/*------end of account pages--------*/
+
 /*------end of CONTENT--------*/
 
 /*------FOOTER--------*/
@@ -2546,6 +2812,7 @@ ul li {
 
     .banner__button {
         width: 240px;
+        height: 30px;
     }
 }
 
@@ -2562,10 +2829,11 @@ ul li {
 
     .banner__button {
         width: 180px;
+        height: 30px;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 545px) {
     .banner__title {
         font-size: 12px;
         margin-bottom: 10px;
@@ -2577,7 +2845,30 @@ ul li {
     }
 
     .banner__button {
-        width: 140px;
+        width: 160px;
+        height: 30px;
+        padding: 5px 10px;
+    }
+
+    .banner1__content {
+        transform: translate(0, -50%);
+        top: 50%;
+        width: 70%;
+        left: 30%;
+    }
+
+    .banner3__content {
+        transform: translate(0, -50%);
+        top: 50%;
+        left: 30%;
+        width: 70%;
+    }
+
+    .banner5__content {
+        transform: translate(0, -50%);
+        top: 50%;
+        left: 30%;
+        width: 70%;
     }
 }
 
