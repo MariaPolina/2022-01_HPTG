@@ -1230,6 +1230,15 @@ ul li {
     color: rgba(39, 34, 28, 0.7);
 }
 
+.placeholder-absolut {
+    position: absolute;
+    font-size: 8px;
+    line-height: 9px;
+    color: rgba(39, 34, 28, 0.5);
+    top: 3px;
+    left: 20px;
+}
+
 /*------end of content general styles--------*/
 
 /*------main page--------*/
@@ -2660,17 +2669,15 @@ ul li {
     }
 }
 
-.basic-data__wrapper {
+.basic-data__wrapper, .change-password__wrapper, .change-address__wrapper {
     margin-top: 60px;
     margin-bottom: 70px;
     max-width: 620px;
 }
 
-.basic-data__title {
+.basic-data__title, .change-password__title, .change-address__title {
     margin-bottom: 40px;
 }
-
-.basic-data__items {}
 
 .basic-data__names, .basic-data__contacts {
     display: grid;
@@ -2679,26 +2686,17 @@ ul li {
     margin-bottom: 20px;
 }
 
-.placeholder-absolut {
-    position: absolute;
-    font-size: 8px;
-    line-height: 9px;
-    color: rgba(39, 34, 28, 0.5);
-    top: 3px;
-    left: 20px;
-}
-
-.basic-data__email {
+.basic-data__email, .change-password__old, .change-password__new {
     margin-bottom: 20px;
 }
 
-.basic-data__buttons {
+.basic-data__buttons, .change-password__buttons, .change-address__buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.basic-data__back {
+.basic-data__back, .change-password__back, .change-address__back {
     width: 130px;
     min-height: auto;
     height: 30px;
@@ -2710,7 +2708,7 @@ ul li {
     line-height: 16px;
 }
 
-.basic-data__proceed {
+.basic-data__proceed, .change-password__proceed, .change-address__proceed {
     width: 130px;
     min-height: auto;
     height: 30px;
@@ -2719,14 +2717,51 @@ ul li {
     line-height: 16px;
 }
 
+.change-address__item {
+    margin-bottom: 20px;
+    border: 1px solid #AFBDD5;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+}
+
+.saved-address__info {
+    justify-self: start;
+}
+
+.saved-address__info p {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.saved-address__info p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.saved-address__change {
+    justify-self: end;
+}
+
+.saved-address__change a {
+    text-decoration: underline;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 15px;
+    text-align: end;
+}
+
 @media (max-width: 1110px) {
-    .basic-data__wrapper {
+    .basic-data__wrapper, .change-password__wrapper, .change-address__wrapper {
         margin-top: 50px;
         margin-bottom: 50px;
         max-width: 100%;
     }
 
-    .basic-data__title {
+    .basic-data__title, .change-password__title, .change-address__title {
         margin-bottom: 20px;
     }
 
@@ -2736,6 +2771,29 @@ ul li {
         row-gap: 20px;
     }
 
+}
+
+@media (max-width: 480px) {
+    .change-address__item {
+        padding: 10px 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+
+    .saved-address__info p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .saved-address__change {
+        justify-self: center;
+    }
+
+    .saved-address__change a {
+        text-align: center;
+    }
 }
 
 /*------end of account pages--------*/
