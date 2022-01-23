@@ -214,4 +214,18 @@ $(document).ready(function () {
 
     /*----////----*/
 
+    /*----change placeholder on focus----*/
+
+    $('._absolut >input').on('focus', function () {
+        var placeholderName = $(this).prop('placeholder');
+        var html = '<div class="placeholder-absolut">' + placeholderName + '</div>';
+        $(this).before(html);
+        $(this).attr("placeholder", "");
+        $(this).blur(function () {
+            $(this).attr("placeholder", placeholderName);
+            $('.placeholder-absolut').remove();
+        });
+    });
+
+    /*----////----*/
 });
