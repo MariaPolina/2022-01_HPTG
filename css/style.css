@@ -2669,13 +2669,24 @@ ul li {
     }
 }
 
-.basic-data__wrapper, .change-password__wrapper, .change-address__wrapper {
+.basic-data__wrapper, .change-password__wrapper, .change-address__wrapper, .subscribe__wrapper {
     margin-top: 60px;
     margin-bottom: 70px;
     max-width: 620px;
 }
 
-.basic-data__title, .change-password__title, .change-address__title {
+.order-history__wrapper {
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.payment-history__wrapper {
+    margin-top: 60px;
+    margin-bottom: 70px;
+    max-width: 650px;
+}
+
+.basic-data__title, .change-password__title, .change-address__title, .subscribe__title, .order-history__title, .payment-history__title {
     margin-bottom: 40px;
 }
 
@@ -2690,13 +2701,13 @@ ul li {
     margin-bottom: 20px;
 }
 
-.basic-data__buttons, .change-password__buttons, .change-address__buttons {
+.basic-data__buttons, .change-password__buttons, .change-address__buttons, .subscribe__buttons, .order-history__buttons, .payment-history__buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.basic-data__back, .change-password__back, .change-address__back {
+.basic-data__back, .change-password__back, .change-address__back, .order-history__back, .payment-history__back {
     width: 130px;
     min-height: auto;
     height: 30px;
@@ -2708,7 +2719,7 @@ ul li {
     line-height: 16px;
 }
 
-.basic-data__proceed, .change-password__proceed, .change-address__proceed {
+.basic-data__proceed, .change-password__proceed, .change-address__proceed, .order-history__proceed, .payment-history__proceed {
     width: 130px;
     min-height: auto;
     height: 30px;
@@ -2754,14 +2765,131 @@ ul li {
     text-align: end;
 }
 
+.subscribe__email {
+    margin-bottom: 15px;
+}
+
+.subscribe__buttons {
+    margin-top: 25px;
+}
+
+.subscribe__proceed {
+    width: 250px;
+}
+
+.subscribe__cancell {
+    width: 250px;
+    background: #EDE0D4;
+}
+
+.order-history__table, .payment-history__table {
+    margin-bottom: 20px;
+}
+
+.order-history__table-head, .payment-history__table-head {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+}
+
+.order-head__item {
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.payment-head__item {
+    padding: 10px 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.order-head__item:not(:last-child), .order-row__item:not(:last-child), .payment-head__item:not(:last-child), .payment-row__item:not(:last-child) {
+    border-right: 1px #AFBDD5 solid;
+}
+
+.order-row__item {
+    padding: 20px 10px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border-top: 1px #AFBDD5 solid;
+}
+
+.payment-row__item {
+    padding: 20px 45px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border-top: 1px #AFBDD5 solid;
+}
+
+.order-history__table-row, .payment-history__table-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+}
+
+.order-head__order, .order-row__order {
+    width: 125px;
+}
+
+.order-head__status, .order-row__status {
+    width: 155px;
+}
+
+.order-head__date, .order-row__date {
+    width: 135px;
+}
+
+.order-head__number, .order-row__number {
+    width: 170px;
+}
+
+.order-head__name, .order-row__name {
+    width: 150px;
+}
+
+.order-head__total, .order-row__total {
+    width: 95px;
+}
+
+.payment-head__date, .payment-row__date {
+    width: 150px;
+}
+
+.payment-head__description, .payment-row__description {
+    width: 340px;
+}
+
+.payment-head__sum, .payment-row__sum {
+    width: 160px;
+}
+
 @media (max-width: 1110px) {
-    .basic-data__wrapper, .change-password__wrapper, .change-address__wrapper {
+    .basic-data__wrapper, .change-password__wrapper, .change-address__wrapper, .subscribe__wrapper {
         margin-top: 50px;
         margin-bottom: 50px;
         max-width: 100%;
     }
 
-    .basic-data__title, .change-password__title, .change-address__title {
+    .order-history__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 830px;
+    }
+
+    .payment-history__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 650px;
+    }
+
+    .basic-data__title, .change-password__title, .change-address__title, .subscribe__title {
         margin-bottom: 20px;
     }
 
@@ -2769,6 +2897,48 @@ ul li {
         display: grid;
         grid-template: 1fr / 1fr;
         row-gap: 20px;
+    }
+
+    .subscribe__buttons {
+        flex-direction: column;
+    }
+
+    .subscribe__proceed {
+        margin: 0 auto;
+    }
+
+    .subscribe__cancell {
+        margin: 15px auto 0 auto;
+    }
+
+    .order-history__table, .payment-history__table {
+        overflow-x: auto !important;
+        width: 100%;
+        scrollbar-color: #AFBDD5 #F2F1F5;
+        scrollbar-width: thin;
+        padding-bottom: 15px;
+    }
+
+    .order-history__table::-webkit-scrollbar, .payment-history__table::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        background-color: #F2F1F5;
+        border-radius: 10px;
+    }
+
+    .order-history__table::-webkit-scrollbar-thumb, .payment-history__table::-webkit-scrollbar-thumb {
+        background: #AFBDD5;
+        border-radius: 10px;
+    }
+
+    .order-head, .order-row, .payment-head, .payment-row {
+        width: 290px;
+    }
+
+    .order-head__item, .order-row__item, .payment-head__item, .payment-row__item {
+        padding: 10px 10px;
+        font-size: 14px;
+        line-height: 16px;
     }
 
 }
