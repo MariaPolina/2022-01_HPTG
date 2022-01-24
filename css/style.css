@@ -152,7 +152,7 @@ ul li {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 104;
 }
 
 .wrapper {
@@ -2972,7 +2972,7 @@ ul li {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 102;
+    z-index: 105;
     display: flex;
     align-items: center;
     justify-content: center;
