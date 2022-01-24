@@ -295,5 +295,14 @@ $(document).ready(function () {
     $('.header-nav__callback').on('click', callbackModal);
 
     /*----////----*/
+
+    /*----faq----*/
+
+    $('.faq__control').on('click', function (event) {
+        $($(this).next('div')).slideToggle(300);
+        $(this).toggleClass('active');
+    });
+
+    /*----////----*/
 });
 
