@@ -3,6 +3,7 @@ var burgerCatalogOpen = false;
 var favoritesOpen = false;
 var basketOpen = false;
 var cabinetOpen = false;
+var modalWrapper = false
 
 $(document).ready(function () {
 
@@ -225,6 +226,32 @@ $(document).ready(function () {
             $(this).attr("placeholder", placeholderName);
             $('.placeholder-absolut').remove();
         });
+    });
+
+    /*----////----*/
+
+    /*----modal window for account basic data page----*/
+
+    $('.basic-data__proceed').on('click', function () {
+        if (modalWrapper) {
+            $(this).attr('id', '');
+            modalWrapper = false;
+            $('.shadow1').remove();
+            $('.modal__wrapper').remove();
+        } else {
+            modalWrapper = true;
+            $(this).attr('id', 'closeModal');
+            var html = '<div class="shadow1"></div>';
+            html += '<div class="modal__wrapper">';
+            html += '<div class="modal__proceed"><div class="close-modal"></div>';
+            html += '<p class="modal__proceed_text">Все изменения успешно сохранены!</p></div></div>';
+
+            $('body').prepend(html);
+
+            $('.close-modal').on('click', function () {
+                $('#closeModal').trigger('click');
+            });
+        }
     });
 
     /*----////----*/
