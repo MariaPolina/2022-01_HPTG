@@ -3072,6 +3072,196 @@ ul li {
 
 /*------end of account pages--------*/
 
+/*------about us page--------*/
+
+.about {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.about__title {
+    margin-bottom: 40px;
+}
+
+.about__1item, .about__2item, .about__3item, .about__4item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about__1item, .about__2item, .about__3item {
+    margin-bottom: 70px;
+}
+
+.about__2item, .about__3item {
+    position: relative;
+}
+
+.about__1item-description {
+    margin-right: 60px;
+    max-width: 555px;
+}
+
+.about__text {
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.about__text:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.about__text span {
+    font-weight: 600;
+}
+
+.about__1item-image, .about__2item-image, .about__3item-image, .about__4item-image {
+    max-width: 475px;
+    height: auto;
+}
+
+.about__1item-image img, .about__2item-image img, .about__3item-image img, .about__4item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__slogan {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    max-width: 715px;
+    margin: 0 auto 70px auto;
+}
+
+.about__slogan-decor {
+    width: 485px;
+    height: 2px;
+    background-color: #AFBDD5;
+    margin: 20px auto 0 auto;
+}
+
+.about__2item-description {
+    max-width: 555px;
+    margin-left: 60px;
+}
+
+.about__2item-decor {
+    position: absolute;
+    width: 375px;
+    height: 2px;
+    background-color: #AFBDD5;
+    top: 322px;
+    left: calc(50% - 120px);
+}
+
+.about__3item-description {
+    max-width: 555px;
+    margin-right: 60px;
+}
+
+.about__3item-title {
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.about__3item-decor {
+    position: absolute;
+    width: 375px;
+    height: 2px;
+    background-color: #AFBDD5;
+    top: 322px;
+    right: calc(50% - 120px);
+}
+
+.about__4item-description {
+    max-width: 555px;
+    margin-left: 60px;
+}
+
+.about__4item-title {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1110px) {
+    .about {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .about__title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about__1item, .about__2item, .about__3item, .about__4item {
+        justify-content: center;
+    }
+
+    .about__1item, .about__2item, .about__3item {
+        margin-bottom: 30px;
+    }
+
+    .about__1item-description {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about__text {
+        font-size: 12px;
+    }
+
+    .about__text:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .about__slogan {
+        font-size: 16px;
+        margin: 0 auto 30px auto;
+    }
+
+    .about__slogan-decor {
+        display: none;
+    }
+
+    .about__2item-description {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .about__2item-decor {
+        display: none;
+    }
+
+    .about__3item-description {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about__3item-title {
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .about__3item-decor {
+        display: none;
+    }
+
+    .about__4item-description {
+        margin-left: 20px;
+    }
+
+    .about__4item-title {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+/*------end of about us page--------*/
+
 /*------end of CONTENT--------*/
 
 /*------FOOTER--------*/
