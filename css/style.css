@@ -927,7 +927,7 @@ ul li {
         top: 157px;
         background: #F4F2F1;
         padding: 20px 15px;
-        z-index: 101;
+        z-index: 99;
         overflow: auto !important;
         height: calc(100% - 157px);
         width: 100%;
@@ -1904,7 +1904,7 @@ ul li {
     color: rgba(39, 34, 28, 0.7);
 }
 
-.subscribe__agree+label {
+.subscribe__agree+label, .callback__agree+label {
     font-size: 12px;
     line-height: 14px;
 }
@@ -2978,16 +2978,18 @@ ul li {
     justify-content: center;
 }
 
-.modal__proceed {
+.modal__content {
     width: 560px;
     height: 340px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     background: #F4F2F1;
     border: 0.5px solid #AFBDD5;
     box-sizing: border-box;
+    padding: 20px;
 }
 
 .close-modal {
@@ -3000,7 +3002,7 @@ ul li {
     right: 20px;
 }
 
-.modal__proceed_text {
+.modal__proceed_text, .modal__callback_text, .modal__callback_ok {
     text-align: center;
     font-family: 'Playfair Display';
     font-weight: 400;
@@ -3010,13 +3012,61 @@ ul li {
 }
 
 @media (max-width: 1110px) {
-    .modal__proceed {
+    .modal__content {
         width: 290px;
-        height: 175px;
+        min-height: 175px;
+        height: auto;
     }
 
-    .modal__proceed_text {
+    .modal__proceed_text, .modal__callback_text, .modal__callback_ok {
         font-size: 14px;
+    }
+}
+
+/*------modal window for callback--------*/
+
+.modal__callback_text {
+    max-width: 370px;
+    margin-bottom: 30px;
+}
+
+.callback__wrapper {
+    max-width: 325px;
+}
+
+.callback__name, .callback__telephone {
+    margin-bottom: 15px;
+}
+
+.callback__proceed {
+    margin-top: 25px;
+}
+
+@media (max-width: 1110px) {
+    .modal__callback_text {
+        max-width: 270px;
+        margin-bottom: 15px;
+    }
+
+    .callback__wrapper {
+        max-width: 270px;
+    }
+
+    .modal__callback_text {
+        margin-top: 30px;
+    }
+
+    .callback__name, .callback__telephone {
+        margin-bottom: 10px;
+    }
+
+    .callback__proceed {
+        margin-top: 15px;
+    }
+
+    .callback__name input::placeholder, .callback__telephone input::placeholder {
+        font-size: 14px;
+        line-height: 16px;
     }
 }
 

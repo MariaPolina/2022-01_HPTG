@@ -62,6 +62,8 @@ $(document).ready(function () {
             $('body').prepend(html);
             $('body,html').css('overflow-y', 'hidden');
 
+            $('.burger__callback').on('click', callbackModal);
+
             $('.burger__wrapper>div>nav>ul>.menu__catalog').on('click', function () {
                 if (burgerCatalogOpen) {
                     burgerCatalogOpen = false;
@@ -230,29 +232,68 @@ $(document).ready(function () {
 
     /*----////----*/
 
-    /*----modal window for account basic data page----*/
+    /*----modal window template----*/
 
-    $('.basic-data__proceed').on('click', function () {
+    function modalWindow(content) {
         if (modalWrapper) {
-            $(this).attr('id', '');
             modalWrapper = false;
             $('.shadow1').remove();
             $('.modal__wrapper').remove();
         } else {
             modalWrapper = true;
-            $(this).attr('id', 'closeModal');
             var html = '<div class="shadow1"></div>';
             html += '<div class="modal__wrapper">';
-            html += '<div class="modal__proceed"><div class="close-modal"></div>';
-            html += '<p class="modal__proceed_text">Все изменения успешно сохранены!</p></div></div>';
+            html += '<div class="modal__content"><div class="close-modal"></div>';
+            html += content;
+            html += '</div></div>';
 
             $('body').prepend(html);
 
             $('.close-modal').on('click', function () {
-                $('#closeModal').trigger('click');
+                modalWrapper = false;
+                $('.shadow1').remove();
+                $('.modal__wrapper').remove();
             });
         }
+    }
+
+    /*----////----*/
+
+    /*----modal window for account basic data page----*/
+
+    $('.basic-data__proceed').on('click', function () {
+        var html = '<p class="modal__proceed_text">Все изменения успешно сохранены!</p>';
+        modalWindow(html);
     });
 
     /*----////----*/
+
+    /*----function for callback modal window----*/
+
+    function callbackModal() {
+        var html = '<p class="modal__callback_text">Оставьте свои контакты и наш менеджер перезвонит Вам в течение часа</p>';
+        html += '<div class="callback__wrapper">';
+        html += '<div class="callback__name _input _absolut"><input type="text" placeholder="Введите Ваше имя" id="callback__name"></div>';
+        html += '<div class="callback__telephone _input _absolut"><input type="text" placeholder="Введите Ваш номер телефона" id="callback__tel"></div>';
+        html += '<div><input type="checkbox" class="callback__agree checkbox-styled" name="callback__agree" value="callback__agree" id="callback__agree"> <label for="callback__agree">Даю согласие на обработку персональных данных</label></div>';
+        html += '<div class="callback__proceed _button">Заказать обратный звонок</div>';
+        html += '</div>';
+        modalWindow(html);
+
+        $('.callback__proceed').on('click', function () {
+            var html = '<p class="modal__callback_ok">Спасибо! <br> Ожидайте звонка от менеджера</p>';
+            $('.modal__callback_text').remove();
+            $('.callback__wrapper').remove();
+            $('.close-modal').after(html);
+        });
+    }
+
+    /*----////----*/
+
+    /*----callback modal window----*/
+
+    $('.header-nav__callback').on('click', callbackModal);
+
+    /*----////----*/
 });
+
