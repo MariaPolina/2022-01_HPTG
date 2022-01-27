@@ -3,14 +3,18 @@ var burgerCatalogOpen = false;
 var favoritesOpen = false;
 var basketOpen = false;
 var cabinetOpen = false;
-var modalWrapper = false
+var modalWrapper = false;
+var orderButtonForListMode = false;
 
 $(document).ready(function () {
 
     /*----change buttons for setting number of ordered goods----*/
     $('.goods-card__order').on('click', function (event) {
-        $(this).next('.goods-card__order-quantity').css('display', 'flex');
-        $(this).css('display', 'none');
+        if (!orderButtonForListMode) {
+
+            $(this).next('.goods-card__order-quantity').css('display', 'flex');
+            $(this).css('display', 'none');
+        }
     });
     /*----////----*/
 
@@ -173,8 +177,13 @@ $(document).ready(function () {
 
     /*----my-select----*/
 
+
+
     $('.my-select>div:first-child').on('click', function (event) {
+        $('.my-select>div:nth-child(2):not(#' + $($(this).parent('div')).attr('id') + '>div:nth-child(2))').css('display', 'none');
         $($(this).next('div')).slideToggle(300);
+        $('.my-select').css('z-index', '2');
+        $($(this).parent('div')).css('z-index', '3');
         $(this).toggleClass('active');
 
     });
@@ -304,5 +313,29 @@ $(document).ready(function () {
     });
 
     /*----////----*/
+
+    /*----switch the view for goods catalog (table/list)----*/
+
+    $('.catalog-goods__view-list').on('click', function (event) {
+        orderButtonForListMode = true;
+        $('.goods-card__order-quantity').css('display', 'flex');
+        $('.goods-card__order').css('display', 'flex');
+        $('.catalog-goods__items').addClass('catalog-goods__list');
+        $('.catalog-goods__items').removeClass('catalog-goods__table');
+        $(this).removeClass('not-active');
+        $('.catalog-goods__view-table').addClass('not-active');
+    });
+
+    $('.catalog-goods__view-table').on('click', function (event) {
+        orderButtonForListMode = false;
+        $('.goods-card__order-quantity').css('display', 'none');
+        $('.catalog-goods__items').addClass('catalog-goods__table');
+        $('.catalog-goods__items').removeClass('catalog-goods__list');
+        $(this).removeClass('not-active');
+        $('.catalog-goods__view-list').addClass('not-active');
+    });
+
+    /*----////----*/
+
 });
 
