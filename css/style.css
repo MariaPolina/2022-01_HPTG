@@ -3750,6 +3750,345 @@ ul li {
 
 /*------end of product card page--------*/
 
+/*------how to order page--------*/
+
+.order__wrapper {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.order__title {
+    margin-bottom: 40px;
+}
+
+.order__content {
+    display: grid;
+    grid-template-columns: calc(66.67% - 20px) 33.33%;
+    column-gap: 20px;
+}
+
+.order__text {
+    margin-bottom: 40px;
+}
+
+.order__text p, .order__steps p {
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.order__text p:not(:last-child), .order__steps p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.order__steps span {
+    font-weight: 700;
+    color: #AFBDD5;
+    margin-right: 30px;
+}
+
+.order__image {
+    justify-self: end;
+    position: relative;
+    max-width: 290px;
+    max-height: 415px;
+}
+
+.order__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order__decor-v {
+    position: absolute;
+    width: 2px;
+    height: 365px;
+    background-color: #AFBDD5;
+    left: -2px;
+    bottom: 130px;
+}
+
+.order__decor-h {
+    position: absolute;
+    width: 365px;
+    height: 2px;
+    background-color: #AFBDD5;
+    top: -2px;
+    right: 0;
+}
+
+@media (max-width: 1110px) {
+    .order__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .order__title {
+        margin-bottom: 20px;
+    }
+
+    .order__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .order__text {
+        margin-bottom: 20px;
+    }
+
+    .order__text p, .order__steps p {
+        font-size: 14px;
+    }
+
+    .order__text p:not(:last-child), .order__steps p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .order__steps span {
+        margin-right: 15px;
+    }
+
+    .order__image {
+        justify-self: center;
+    }
+
+    .order__decor-h, .order__decor-v {
+        display: none;
+    }
+}
+
+/*------end of how to order page--------*/
+
+/*------sales page--------*/
+
+.sales__wrapper {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.sales__title {
+    margin-bottom: 40px;
+}
+
+.sales__items {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 40px;
+}
+
+.sales__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sales__item>div:first-child {
+    max-width: 650px;
+}
+
+.sales__item h6 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 15px;
+}
+
+.sales__item p {
+    font-size: 12px;
+    line-height: 130%;
+}
+
+.sales__button {
+    width: 190px;
+    height: 40px;
+}
+
+@media (max-width: 1110px) {
+    .sales__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .sales__title {
+        margin-bottom: 20px;
+    }
+
+    .sales__items {
+        row-gap: 20px;
+    }
+
+    .sales__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .sales__item h6 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .sales__item p {
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+
+    .sales__button {
+        width: 190px;
+        height: 40px;
+    }
+
+}
+
+/*------end of sales page--------*/
+
+/*------delivery page--------*/
+
+.delivery__wrapper {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.delivery__title {
+    margin-bottom: 40px;
+}
+
+.delivery__content {
+    display: grid;
+    grid-template-columns: 64.41% calc(35.59% - 50px);
+    grid-template-rows: auto auto;
+    column-gap: 50px;
+    grid-template-areas: "text1 image""text2 text2";
+}
+
+.delivery__text1 {
+    grid-area: text1;
+    max-width: 565px;
+}
+
+.delivery__text1 p, .delivery__text2 p {
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.delivery__text1 span, .delivery__text2 span {
+    font-weight: 500;
+}
+
+.delivery__text1 p:not(:last-child), .delivery__text2 p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.delivery__text1 h6, .delivery__text2 h6 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 20px;
+}
+
+.delivery__text1>div {
+    margin-bottom: 40px;
+}
+
+.delivery__image {
+    grid-area: image;
+    justify-self: end;
+    position: relative;
+    max-width: 345px;
+    max-height: 515px;
+}
+
+.delivery__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.delivery__decor-v {
+    position: absolute;
+    width: 2px;
+    height: 300px;
+    background-color: #AFBDD5;
+    left: -2px;
+    bottom: 295px;
+}
+
+.delivery__decor-h {
+    position: absolute;
+    width: 300px;
+    height: 2px;
+    background-color: #AFBDD5;
+    top: -2px;
+    right: 125px;
+}
+
+.delivery__text2 {
+    grid-area: text2;
+    max-width: 825px;
+}
+
+@media (max-width: 1110px) {
+    .delivery__wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .delivery__title {
+        margin-bottom: 20px;
+    }
+
+    .delivery__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "text1""text2""image";
+    }
+
+    .delivery__text1 {
+        grid-area: text1;
+        max-width: 100%;
+    }
+
+    .delivery__text1 p, .delivery__text2 p {
+        font-size: 14px;
+    }
+
+    .delivery__text1 p:not(:last-child), .delivery__text2 p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .delivery__text1 h6, .delivery__text2 h6 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .delivery__text1>div {
+        margin-bottom: 20px;
+    }
+
+    .delivery__image {
+        grid-area: image;
+        justify-self: center;
+        margin-top: 20px;
+    }
+
+    .delivery__decor-v, .delivery__decor-h {
+        display: none;
+    }
+
+    .delivery__text2 {
+        grid-area: text2;
+        max-width: 100%;
+    }
+}
+
+/*------end of delivery page--------*/
+
 /*------about us page--------*/
 
 .about {
