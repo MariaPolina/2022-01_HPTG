@@ -85,7 +85,6 @@ $(document).ready(function () {
     /*----////----*/
 
     /*----dropdown for favorite goods----*/
-
     $('.header-nav__heart').on('click', function () {
         if (favoritesOpen) {
             favoritesOpen = false;
@@ -116,11 +115,9 @@ $(document).ready(function () {
             }
         }
     });
-
     /*----////----*/
 
     /*----dropdown for basket----*/
-
     $('.header-nav__basket').on('click', function () {
         if (basketOpen) {
             basketOpen = false;
@@ -150,11 +147,9 @@ $(document).ready(function () {
             }
         }
     });
-
     /*----////----*/
 
     /*----dropdown for cabinet----*/
-
     $('.header-nav__cabinet').on('click', function () {
         if (cabinetOpen) {
             cabinetOpen = false;
@@ -172,13 +167,9 @@ $(document).ready(function () {
 
         }
     });
-
     /*----////----*/
 
     /*----my-select----*/
-
-
-
     $('.my-select>div:first-child').on('click', function (event) {
         $('.my-select>div:nth-child(2):not(#' + $($(this).parent('div')).attr('id') + '>div:nth-child(2))').css('display', 'none');
         $($(this).next('div')).slideToggle(300);
@@ -197,7 +188,6 @@ $(document).ready(function () {
         $($($(this).parent()).prev("div")).text($(this).text()).trigger('click');
 
     });
-
     /*----////----*/
 
     /*----count height for checkout goods----*/
@@ -223,11 +213,9 @@ $(document).ready(function () {
             $('.checkout__goods').height(countCheckoutGoods * checkoutGoodsHeight + 175);
         };
     });
-
     /*----////----*/
 
     /*----change placeholder on focus----*/
-
     $('._absolut >input').on('focus', function () {
         var placeholderName = $(this).prop('placeholder');
         var html = '<div class="placeholder-absolut">' + placeholderName + '</div>';
@@ -238,11 +226,9 @@ $(document).ready(function () {
             $('.placeholder-absolut').remove();
         });
     });
-
     /*----////----*/
 
     /*----modal window template----*/
-
     function modalWindow(content) {
         if (modalWrapper) {
             modalWrapper = false;
@@ -265,20 +251,16 @@ $(document).ready(function () {
             });
         }
     }
-
     /*----////----*/
 
     /*----modal window for account basic data page----*/
-
     $('.basic-data__proceed').on('click', function () {
         var html = '<p class="modal__proceed_text">Все изменения успешно сохранены!</p>';
         modalWindow(html);
     });
-
     /*----////----*/
 
     /*----function for callback modal window----*/
-
     function callbackModal() {
         var html = '<p class="modal__callback_text">Оставьте свои контакты и наш менеджер перезвонит Вам в течение часа</p>';
         html += '<div class="callback__wrapper">';
@@ -296,26 +278,20 @@ $(document).ready(function () {
             $('.close-modal').after(html);
         });
     }
-
     /*----////----*/
 
     /*----callback modal window----*/
-
     $('.header-nav__callback').on('click', callbackModal);
-
     /*----////----*/
 
     /*----faq----*/
-
     $('.faq__control').on('click', function (event) {
         $($(this).next('div')).slideToggle(300);
         $(this).toggleClass('active');
     });
-
     /*----////----*/
 
     /*----switch the view for goods catalog (table/list)----*/
-
     $('.catalog-goods__view-list').on('click', function (event) {
         orderButtonForListMode = true;
         $('.goods-card__order-quantity').css('display', 'flex');
@@ -334,11 +310,9 @@ $(document).ready(function () {
         $(this).removeClass('not-active');
         $('.catalog-goods__view-list').addClass('not-active');
     });
-
     /*----////----*/
 
     /*----switch the tabs for product page----*/
-
     $('.tabs__specification').on('click', function (event) {
         $('.product-card__description-tab1').css('display', 'none');
         $('.product-card__description-tab2').css('display', 'none');
@@ -368,7 +342,6 @@ $(document).ready(function () {
         $('.tabs__specification').removeClass('active');
         $(this).addClass('active');
     });
-
     /*----////----*/
 
 });

@@ -496,7 +496,7 @@ ul li {
     border: 0.5px solid #AFBDD5;
     box-sizing: border-box;
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     left: 50%;
     transform: translateX(-50%);
     padding-top: 20px;
@@ -1079,6 +1079,7 @@ ul li {
 @media (max-width: 1110px) {
     ._title {
         font-size: 24px;
+        text-align: center;
     }
 
     ._button {
@@ -3624,7 +3625,7 @@ ul li {
 .additional__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-    column-gap: 100px;
+    column-gap: 30px;
     row-gap: 40px;
     justify-items: center;
 }
