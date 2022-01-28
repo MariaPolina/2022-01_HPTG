@@ -3460,6 +3460,296 @@ ul li {
 
 /*------end of catalog--------*/
 
+/*------product card page--------*/
+
+.product-card__wrapper {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.product-card__main {
+    display: grid;
+    grid-template-columns: 51.35% calc(48.65% - 60px);
+    grid-template-rows: auto auto auto;
+    column-gap: 60px;
+    row-gap: 40px;
+    grid-template-areas: "image description""tabs description""tab1 description";
+}
+
+.product-card__specification-tab {
+    display: none;
+}
+
+.product-card__review-tab {
+    display: none;
+}
+
+.product-card__image {
+    grid-area: image;
+    max-width: 570px;
+    height: auto;
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card__description {
+    grid-area: description;
+}
+
+.product-card__description p, .product-card__description-tab1 p, .product-card__description-tab2 p, .product-card__specification-tab p {
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 15px;
+}
+
+.product-card__description span, .product-card__description-tab1 span, .product-card__description-tab2 span, .product-card__specification-tab span {
+    font-weight: 600;
+}
+
+.product-card__description-tab2 li {
+    font-size: 16px;
+    line-height: 130%;
+    list-style: disc;
+    margin-left: 30px;
+}
+
+.product-card__title {
+    margin-bottom: 30px;
+}
+
+.product-card__price {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+    color: #000000;
+    margin-bottom: 45px;
+}
+
+.product-card__options h6, .product-card__specification-tab h5 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.product-card__specification-tab h5 {
+    margin-bottom: 20px;
+}
+
+.product-card__specification-tab>div:nth-child(2) {
+    margin-top: 30px;
+}
+
+.product-card__options .weight+label {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.product-card__options {
+    margin-bottom: 30px;
+}
+
+.product-card__description .goods-card__order {
+    width: 255px;
+    margin-bottom: 30px;
+}
+
+.product-card__tabs {
+    position: relative;
+    grid-area: tabs;
+}
+
+.tab__info {
+    grid-area: tab1;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs__decor {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #AFBDD5;
+    bottom: 0px;
+}
+
+.tabs__description, .tabs__specification, .tabs__review {
+    position: relative;
+    font-size: 16px;
+    line-height: 130%;
+    padding: 10px 20px;
+    margin-right: 50px;
+    box-sizing: border-box;
+    z-index: 2;
+    background-color: #F4F2F1;
+    border-bottom: 1px solid #AFBDD5;
+    cursor: pointer;
+}
+
+.tabs__description.active {
+    border-top: 1px solid #AFBDD5;
+    border-bottom: 1px solid #F4F2F1;
+    border-right: 1px solid #AFBDD5;
+}
+
+.tabs__specification.active, .tabs__review.active {
+    border-top: 1px solid #AFBDD5;
+    border-bottom: 1px solid #F4F2F1;
+    border-right: 1px solid #AFBDD5;
+    border-left: 1px solid #AFBDD5;
+}
+
+.additional {
+    margin-bottom: 70px;
+}
+
+.additional h4 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.additional__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    column-gap: 100px;
+    row-gap: 40px;
+    justify-items: center;
+}
+
+.product-card__review-tab p {
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 30px;
+}
+
+.product-card__review-name, .product-card__review-text {
+    margin-bottom: 20px;
+}
+
+.product-card__review-text textarea {
+    height: 100px;
+}
+
+.product-card__review-proceed {
+    width: 130px;
+    min-height: auto;
+    height: 30px;
+    padding: 7px;
+    font-size: 14px;
+    line-height: 16px;
+    float: right;
+}
+
+@media (max-width: 1110px) {
+    .product-card__wrapper {
+        margin-top: 50px;
+    }
+
+    .product-card__main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 20px;
+        grid-template-areas: "image""description""tabs""tab1";
+        justify-items: center;
+    }
+
+    .product-card__description p, .product-card__description-tab1 p, .product-card__description-tab2 p, .product-card__specification-tab p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .product-card__description-tab2 li {
+        font-size: 12px;
+    }
+
+    .product-card__title {
+        margin-bottom: 20px;
+    }
+
+    .product-card__price {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .product-card__options h6, .product-card__specification-tab h5 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .product-card__specification-tab>div:nth-child(2) {
+        margin-top: 15px;
+    }
+
+    .product-card__specification-tab h5 {
+        margin-bottom: 10px;
+    }
+
+    .product-card__options .weight+label {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .product-card__options {
+        margin-bottom: 20px;
+    }
+
+    .product-card__tabs {
+        justify-self: start;
+        width: 100%;
+    }
+
+    .product-card__description .goods-card__order {
+        margin: 0 auto 20px auto;
+
+    }
+
+    .tabs__description, .tabs__specification, .tabs__review {
+        font-size: 14px;
+        padding: 10px 10px;
+        font-size: 14px;
+        margin-right: 0px;
+    }
+
+    .product-card__review-tab p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .product-card__review-text textarea {
+        height: 80px;
+    }
+
+    .additional {
+        margin-bottom: 50px;
+    }
+
+    .additional h4 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .additional__items {
+        column-gap: 30px;
+        row-gap: 20px;
+    }
+}
+
+/*------end of product card page--------*/
+
 /*------about us page--------*/
 
 .about {

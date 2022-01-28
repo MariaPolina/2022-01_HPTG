@@ -337,5 +337,39 @@ $(document).ready(function () {
 
     /*----////----*/
 
+    /*----switch the tabs for product page----*/
+
+    $('.tabs__specification').on('click', function (event) {
+        $('.product-card__description-tab1').css('display', 'none');
+        $('.product-card__description-tab2').css('display', 'none');
+        $('.product-card__review-tab').css('display', 'none');
+        $('.product-card__specification-tab').css('display', 'block');
+        $('.tabs__description').removeClass('active');
+        $('.tabs__review').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.tabs__review').on('click', function (event) {
+        $('.product-card__description-tab1').css('display', 'none');
+        $('.product-card__description-tab2').css('display', 'none');
+        $('.product-card__specification-tab').css('display', 'none');
+        $('.product-card__review-tab').css('display', 'block');
+        $('.tabs__description').removeClass('active');
+        $('.tabs__specification').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.tabs__description').on('click', function (event) {
+        $('.product-card__specification-tab').css('display', 'none');
+        $('.product-card__review-tab').css('display', 'none');
+        $('.product-card__description-tab1').css('display', 'block');
+        $('.product-card__description-tab2').css('display', 'block');
+        $('.tabs__review').removeClass('active');
+        $('.tabs__specification').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    /*----////----*/
+
 });
 
